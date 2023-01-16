@@ -12,6 +12,4 @@ const developmentChains = ["hardhat", "localhost"]
 module.exports = {
     networkConfig,
     developmentChains,
-    DECIMALS,
-    INITIAL_PRICE,
 }
