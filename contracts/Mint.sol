@@ -9,8 +9,6 @@ contract Mint is ERC721, ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private s_tokenId;
 
-    event Minted(uint256 indexed tokenId, address owner);
-
     constructor(string memory tokenName, string memory symbol) ERC721(tokenName, symbol) {}
 
     function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
@@ -30,7 +28,6 @@ contract Mint is ERC721, ERC721URIStorage {
         uint256 id = s_tokenId.current();
         _safeMint(owner, id);
         _setTokenURI(id, metadataURI);
-        emit Minted(id, owner);
         return id;
     }
 }
