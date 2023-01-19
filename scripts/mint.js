@@ -4,7 +4,7 @@ async function main() {
     const {deployer} = await getNamedAccounts()
     const mint = await ethers.getContract("Mint", deployer)
 
-    console.log(`Found student registration at ${mint.address}`)
+    console.log(`Found Mint at ${mint.address}`)
 
     console.log("Minting your NFT.....")
 
@@ -21,5 +21,5 @@ main()
    .then(() => process.exit(0))
    .catch((error) => {
       console.error(error)
-      process.exit
+      process.exit(1)
    })
